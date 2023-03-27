@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Net Salary Calculator</title>
+	<!-- Include the JavaScript file -->
+	<script src="index-3.js"></script>
+</head>
+<body>
+	<h2>Net Salary Calculator</h2>
+	<!-- Create a form with input fields for basic salary and benefits -->
+	<form>
+		<label for="basic_salary">Basic Salary:</label>
+		<input type="number" id="basic_salary" name="basic_salary"><br><br>
+		<label for="benefits">Benefits:</label>
+		<input type="number" id="benefits" name="benefits"><br><br>
+		<!-- Create a button that calls the calculateNetSalary function when clicked -->
+		<button type="button" onclick="calculateNetSalary()">Calculate</button><br><br>
+		<!-- Create input fields to display the calculated gross and net salaries -->
+		<label for="gross_salary">Gross Salary:</label>
+		<input type="number" id="gross_salary" name="gross_salary" disabled><br><br>
+		<label for="net_salary">Net Salary:</label>
+		<input type="number" id="net_salary" name="net_salary" disabled>
+	</form>
+</body>
+</html>
+

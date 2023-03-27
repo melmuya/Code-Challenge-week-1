@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Speed Calculator</title>
+</head>
+<body>
+	<!-- Heading of the page -->
+	<h1>Speed Calculator</h1>
+	<!-- A form with an input field for the speed and a button to trigger the calculation -->
+	<form>
+		<!-- A label for the input field -->
+		<label for="speed">Enter the speed of the car in km/h:</label>
+		<!-- An input field for the speed, with type "number" and required attribute -->
+		<input type="number" id="speed" name="speed" required>
+		<!-- A button to trigger the calculation of the demerit points, with an onclick event listener -->
+		<button type="button" onclick="calculateDemeritPoints()">Calculate</button>
+	</form>
+	<!-- A paragraph element to display the result of the calculation -->
+	<p id="result"></p>
+	<!-- A JavaScript script to calculate the demerit points -->
+	<script>
+		// A function to calculate the demerit points based on the speed
+		function calculateDemeritPoints() {
+			// Get the speed value from the input field
+			const speed = document.getElementById("speed").value;
+			// If the speed is less than 70, display "Ok"
+			if (speed < 70) {
+				document.getElementById("result").innerHTML = "Ok";
+			} else {
+				// Calculate the demerit points using the formula (speed - 70) / 5
+				const demeritPoints = Math.floor((speed - 70) / 5);
+				// If the demerit points exceed 12, display "License suspended"
+				if (demeritPoints > 12) {
+					document.getElementById("result").innerHTML = "License suspended";
+				} else {
+					// Otherwise, display the number of demerit points
+					document.getElementById("result").innerHTML = "Demerit points: " + demeritPoints;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
